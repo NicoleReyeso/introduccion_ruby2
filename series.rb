@@ -1,12 +1,12 @@
  
  #tipos de datos
- texto = ""
- texto2 = ''
- num = 2
- bool = false
+# texto = ""
+ #texto2 = ''
+ #num = 2
+ #bool = false
  #coleccion de datos
- lista = []
- hash = {}
+ #lista = []
+ #hash = {}
 
  serie_1 = {
      nombre: "Gossip Girl",
