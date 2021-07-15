@@ -13,3 +13,4 @@ elsif nivel == "intermedio"
 elsif nivel == "avanzado"
     puts "Hola, me llamo " + nombre + ", tengo " + edad + " años y mi nivel es ***"
 end
+
