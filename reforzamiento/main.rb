@@ -10,6 +10,7 @@
 require_relative "juego"
 
 juego_nuevo =Juego.new
+
 #puts juego_nuevo.palabra_secreta
 #puts juego_nuevo.cambiar_letras_a_guiones
 

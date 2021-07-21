@@ -7,22 +7,21 @@ class Juego
 
 def initialize 
     #relación de asociación /depencia
-     al_azar = rand (0..1)
-     if al_azar == 0
-    @palabra_secreta = GeneradorPalabras.generar_planeta
-     else 
-        @palabra_secreta = GeneradorPalabras.generar_palabra_estatica
-     end
+     
+    @palabra_secreta = GeneradorPalabras.generar
      @vidas = 5
 end
 
 def comenzar 
-    puts "Bienvenido al ahorcado, adivina la palabra"
+    puts "Bienvenido al ahorcado 💀, adivina la palabra ..."
     guiones = cambiar_letras_a_guiones
     puts guiones
+
     while guiones.gsub(" ", "") != @palabra_secreta and @vidas > 0
         puts "vidas: #{@vidas}"
+
         letra = gets.chomp #no agarre el enter
+        
         letra_encontrada = false
 
         for posicion_letra in 0..@palabra_secreta.length-1
@@ -39,22 +38,36 @@ def comenzar
         end
 
         puts guiones
+    end
+    he_ganado?
         #preguntar si la letra existe en mi palabra
         #si existe cambiar el guion por la letra
+        
+    end
+    private #métodos privados hacia abajo
+
+    def cambiar_letras_a_guiones
+        return "_ " * palabra_secreta.length
     end
 
-    if @vidas > 0 
-    puts "GANASTE!! 🤩🤩🤗"
-else
-    puts "AHORCADO X.X 💀💀💀💀 "
-end
+    def he_ganado?
 
-end
+        if @vidas > 0 
+            puts "GANASTE!! 🤩🤩🤗"
+        else
+            puts "AHORCADO X.X 💀💀💀💀 "
+        end
+        puts "La palabra era #{@palabra_secreta}"
+        
+        end
+    end
+
+    
 
 #private #métodos privados 
-    def cambiar_letras_a_guiones
-        "_ " * @palabra_secreta.length
-    end
+    #def cambiar_letras_a_guiones
+        #"_ " * @palabra_secreta.length
+    #end
 
     #def cambiar_letras_a_guiones_2
         #for i in 0.. @palabra_secreta.length-1
@@ -63,4 +76,4 @@ end
     #end
 
 
-end
+
