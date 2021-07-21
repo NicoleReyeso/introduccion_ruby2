@@ -17,22 +17,41 @@ def initialize
 end
 
 def comenzar 
-    while true
-        guiones = cambiar_letras_a_guiones
+    puts "Bienvenido al ahorcado, adivina la palabra"
+    guiones = cambiar_letras_a_guiones
+    puts guiones
+    while guiones.gsub(" ", "") != @palabra_secreta and @vidas > 0
+        puts "vidas: #{@vidas}"
         letra = gets.chomp #no agarre el enter
+        letra_encontrada = false
+
         for posicion_letra in 0..@palabra_secreta.length-1
             if @palabra_secreta[posicion_letra] == letra
                 guiones[posicion_letra * 2] = letra
+                letra_encontrada = true
                 
             end
         end
-        print guiones
+
+        if letra_encontrada == false
+            @vidas -= 1
+
+        end
+
+        puts guiones
         #preguntar si la letra existe en mi palabra
         #si existe cambiar el guion por la letra
     end
 
+    if @vidas > 0 
+    puts "GANASTE"
+else
+    puts "AHORCADO X.X"
+end
 
 end
+
+#private #métodos privados 
     def cambiar_letras_a_guiones
         "_ " * @palabra_secreta.length
     end

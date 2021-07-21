@@ -10,7 +10,7 @@ class GeneradorPalabras
     end
 
     def self.generar_planeta
-        return Faker::Space.planet
+        return Faker::Space.planet.downcase
     end
 
 
