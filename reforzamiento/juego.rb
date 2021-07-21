@@ -44,9 +44,9 @@ def comenzar
     end
 
     if @vidas > 0 
-    puts "GANASTE"
+    puts "GANASTE!! 🤩🤩🤗"
 else
-    puts "AHORCADO X.X"
+    puts "AHORCADO X.X 💀💀💀💀 "
 end
 
 end
