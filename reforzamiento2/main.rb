@@ -28,20 +28,12 @@
    # puts filtrados.count
 #end
 
-require_relative 'generador_productos'
-require_relative 'pedido'
 
-inventario = []
-10.times do
-    inventario << GeneradorProductos.generar
-end
+require_relative 'venta'
 
-# Mostrar inventario al usuario
-puts "===== \t Su tienda amiga \t ====="
-puts "Inventario: 📦"
-inventario.each do |producto|
-    puts "#{producto.codigo} \t #{producto.nombre} \t #{producto.precio} \t #{producto.marca} \t #{producto.presentacion} \t #{producto.categoria}"
-end
+venta = Venta.new
+venta.crear_inventario
+venta.mostrar_inventario
+venta.crear_inventario
 
-pedido = Pedido.new
-puts pedido.inspect
+
