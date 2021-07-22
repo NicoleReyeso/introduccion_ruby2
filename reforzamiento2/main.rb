@@ -31,9 +31,12 @@
 
 require_relative 'venta'
 
-venta = Venta.new
-venta.crear_inventario
-venta.mostrar_inventario
-venta.crear_inventario
+comando = ""
 
+while comando != "n"
+    venta = Venta.new
+    venta.comenzar
 
+    puts "¿Quiere hacer otro pedido? (s/n)"
+    comando = gets.chomp
+end
