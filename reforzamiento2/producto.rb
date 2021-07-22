@@ -6,7 +6,5 @@ class Producto
     attr_accessor :presentacion  #granel o envasado
     attr_accessor :categoria  #vegetales frutas 
 
+end  
 
-
-
-end

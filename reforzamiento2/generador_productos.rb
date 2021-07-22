@@ -6,7 +6,7 @@ class GeneradorProductos
 
     def self.generar
 
-        producto_nuevo = Poducto.new
+        producto_nuevo = Producto.new
         producto_nuevo.nombre = generar_nombre(producto_nuevo)
         producto_nuevo.precio = Faker::Number.between(from: 1000, to: 50000) 
         producto_nuevo.codigo = Faker::Barcode.ean
