@@ -9,10 +9,20 @@ RSpec.describe GeneradorTexto do
 
         resultado_letras = GeneradorTexto.letras (10)
         #prueba
+        
         expect(resultado_letras.count).to eq(10)
 
-        #["f", "j", "f", "j", "f", "j", "f", "j"]
-        # "f", "j", "f", "j", "f", "j"
+       # preparacion 
+       suma_letras = 0
+       #ejecucion
+       resultado_letras = GeneradorTexto.letras(15)
+       resultado_letras.each do |letra|
+        suma_letras += letra.length
+         end
+
+       #prueba
+
+      expect(suma_letras).to eq(15)
     end
 
 
